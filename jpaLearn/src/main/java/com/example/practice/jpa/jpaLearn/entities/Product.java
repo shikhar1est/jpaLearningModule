@@ -19,6 +19,10 @@ import java.time.LocalDateTime;
 @Table(name="product_table",
         uniqueConstraints = {
                    @UniqueConstraint(name="name_unique",columnNames = {"name"}),
+                   @UniqueConstraint(name="title_price_unique",columnNames = {"title","price"})
+        },
+        indexes = {
+        @Index(name = "name_index",columnList = "name")
         }
 )
 public class Product {
